@@ -9,6 +9,7 @@ module.exports = class MenuController {
         message: 'Please choose from an option below: ',
         choices: [
           'Add new contact',
+          'Get today\'s date',
           'Exit'
         ]
       }
@@ -24,6 +25,9 @@ module.exports = class MenuController {
       switch(response.mainMenuChoice) {
         case 'Add new contact':
           this.addContact();
+          break;
+        case 'Get today\'s date':
+          this.getDate();
           break;
         case 'Exit':
           this.exit();
@@ -44,6 +48,14 @@ module.exports = class MenuController {
   addContact() {
     this.clear();
     console.log('addContact called');
+    this.main();
+  }
+
+  getDate() {
+    this.clear();
+    let date = new Date().toLocaleDateString();
+    let time = new Date().toLocaleTimeString();
+    console.log(`It is ${time} on ${date}`);
     this.main();
   }
 
