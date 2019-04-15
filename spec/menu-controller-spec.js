@@ -1,11 +1,11 @@
 const MenuController = require('../controllers/MenuController');
 
 describe('MenuController', () => {
-  describe('#getContactCount()', () => {
-    beforeEach(() => {
-      this.menu = new MenuController();
-    });
+  beforeEach(() => {
+    this.menu = new MenuController();
+  });
 
+  describe('#getContactCount()', () => {
     it('should return 0 when no contacts are in the book', () => {
       expect(this.menu.getContactCount()).toBe(0);
     });
